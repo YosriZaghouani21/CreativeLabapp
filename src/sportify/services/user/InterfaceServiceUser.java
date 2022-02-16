@@ -5,6 +5,7 @@
 package sportify.services.user;
 import sportify.models.user.User;
 import Sportifydesktop.infrastructure.IService;
+import java.util.List;
 
 /**
  *
@@ -15,7 +16,7 @@ public interface InterfaceServiceUser extends IService<User> {
     public User GetById(int ID);
 
    // @Override
-   // public List<Admin> Getall();
+    public List <User> Getall();
 
     @Override
     public void Update(User entity);
