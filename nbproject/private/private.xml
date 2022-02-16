@@ -4,13 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/Sportifydesktop/infrastructure/DBconnector.java</file>
-            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/articles/Main.java</file>
-            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/coachs/Main.java</file>
-            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/livreurs/Main.java</file>
-            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/user/Main.java</file>
+            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/services/user/ImpServiceAdmin.java</file>
             <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/Sportify.java</file>
-            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/events/Evennement.java</file>
             <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/models/events/Categorieevenement.java</file>
+            <file>file:/C:/Users/zagho/Documents/NetBeansProjects/Sportify/src/sportify/Config.java</file>
         </group>
     </open-files>
 </project-private>
