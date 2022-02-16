@@ -113,5 +113,33 @@ public class ImpServiceUser implements InterfaceServiceUser {
         return users;
      
      }
+     
+        @Override
+    public User GetById(int ID) {
+    String req = "SELECT * from User WHERE Id = ?";
+            try {
+                pst = dbcon.prepareStatement(req);
+                pst.setInt(1,ID);
+                ResultSet rs = pst.executeQuery();
+                
+                User u = new User();
+                rs.next();
+                
+                u.setId(rs.getInt(1));
+                u.setNom(rs.getString(2));
+                u.setPrenom(rs.getString(3));
+                u.setAdresse(rs.getString(4));
+                u.setEmail(rs.getString(5));
+                u.setPassword(rs.getString(6));
+                u.setType(rs.getString(7));
+                u.setNum(rs.getString(8));
+                
+                return u;
+            } catch (SQLException e) {
+                   System.err.println(e.getMessage());
+            return null;
+            }
+
+    }
 
 }
