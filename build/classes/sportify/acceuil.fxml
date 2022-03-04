@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.AcceuilController">
+   <children>
+      <SplitPane dividerPositions="0.2725118483412322" orientation="VERTICAL" prefHeight="424.0" prefWidth="621.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Text fill="#5d57d0" layoutX="145.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Acceuil Commande &amp; Livraison" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="image1" fitHeight="93.0" fitWidth="97.0" layoutX="22.0" layoutY="16.0">
+                     <image>
+                        <Image url="@../../../../../Desktop/index.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="231.0" prefWidth="426.0">
+               <children>
+                  <Button fx:id="commande" layoutX="270.0" layoutY="86.0" mnemonicParsing="false" onAction="#Commandeview" style="-fx-background-color: #5d57d0;" text="Commande" textFill="WHITE" />
+                  <Button fx:id="livraison" layoutX="270.0" layoutY="136.0" mnemonicParsing="false" onAction="#livraisonview" prefHeight="31.0" prefWidth="97.0" style="-fx-background-color: #5d57d0;" text="Livraison" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
