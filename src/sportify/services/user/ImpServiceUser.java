@@ -12,13 +12,16 @@ import java.util.ArrayList;
 import sportify.models.user.User;
 import java.util.List;
 import java.sql.ResultSet;
-
+import java.sql.Statement;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+import sportify.models.user.Session;
 
 /**
  *
  * @author zagho
  */
-public class ImpServiceUser implements InterfaceServiceUser {
+public class ImpServiceUser implements InterfaceServiceUser<User> {
 
     private Connection dbcon;
     private PreparedStatement pst;
@@ -28,118 +31,132 @@ public class ImpServiceUser implements InterfaceServiceUser {
     }
 
     @Override
-    public User Add(User entity) {
-        String req = "INSERT INTO user(Nom, Password, Adresse, Email, Type , Numero) VALUES (?,?,?,?,?,?)";
+    public void ajouter(User entity) {
+        System.out.println("hello");
+        String req = "INSERT INTO `user` (`Nom` , `Prenom` , `Adresse`, `Email`, `Password`, `Type` , `Numero`) VALUES (?,?,?,?,?,?,?)";
         try {
             pst = dbcon.prepareStatement(req);
             pst.setString(1, entity.getNom());
             pst.setString(2, entity.getPrenom());
             pst.setString(3, entity.getAdresse());
             pst.setString(4, entity.getEmail());
-            pst.setString(5, entity.getType());
-            pst.setString(6, entity.getNum());
+            pst.setString(5, entity.getPassword());
+            pst.setString(6, entity.getType());
+            pst.setString(7, entity.getNum());
 
             pst.executeUpdate();
             System.out.println("sportify user Added");
-            return entity;
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
-            return null;
+
         }
     }
 
     @Override
-    public void Delete(User entity) {
-        String req = "DELETE FROM `User` WHERE `IdUser` = ? ";
+    public void supprimer(int id) {
         try {
-            pst = dbcon.prepareStatement(req);
-            pst.setInt(1, entity.getId());
-            pst.executeUpdate();
-            System.out.println("sportify User Deleted");
-
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
+            String req = "DELETE FROM User where Id=" + id;
+            Statement st = new DBconnector().getCnx().createStatement();
+            st.executeUpdate(req);
+            System.out.println("utilisateur supprimée !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
+
+    }
+
+ @Override
+    public void modifier(User U) {
+        
+
+        try {
+
+            String req = "UPDATE User SET Nom = '"
+                    + U.getNom() + "', Prenom='" + U.getPrenom() + "', Adresse='"
+                    + U.getAdresse() + "', Email='" + U.getEmail()
+                    + "', Password='" + U.getPassword()
+                    + "', Type='" + U.getType()
+                    + "', Numero='" + U.getNum()
+                    + "'WHERE Id=" + U.getId();
+
+            Statement st = new DBconnector().getCnx().createStatement();
+            st.executeUpdate(req);
+            System.out.println("Utilisateur modifée !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 
     @Override
-    public void Update(User entity) {
-        String req = "UPDATE User SET Id_user = ?  AND Nom = ? AND Prenom = ? "
-                + " AND Adresse = ? AND Email = ? "
-                + "AND Password = ? AND Type = ?"
-                + "AND Numero = ? ";
+    public List<User> afficher() {
+
+        List<User> users = new ArrayList<>();
+        String req = "SELECT * from User";
+
         try {
             pst = dbcon.prepareStatement(req);
-            pst.setInt(1, entity.getId());
-            pst.setString(2, entity.getNom());
-            pst.setString(3, entity.getPrenom());
-            pst.setString(4,entity.getAdresse());
-            pst.setString(5,entity.getEmail());
-            pst.setString(6, entity.getPassword());
-            pst.setString(7, entity.getType());
-            pst.setString(7, entity.getNum());
-            pst.executeUpdate();
-            System.out.println("sportify User Updated ");
+            ResultSet rs = pst.executeQuery();
+     while(rs.next()){
+            User u = new User();
+            rs.next();
+            u.setId(rs.getInt(1));
+            u.setNom(rs.getString(2));
+            u.setPrenom(rs.getString(3));
+            u.setAdresse(rs.getString(4));
+            u.setEmail(rs.getString(5));
+            u.setPassword(rs.getString(6));
+            u.setType(rs.getString(7));
+            u.setNum(rs.getString(8));
+
+            users.add(u);
+             }
         } catch (Exception e) {
+            System.err.println(e.getMessage());
+
         }
+        return users;
+    }
+
+    @Override
+    public User returnuser(String name, String password) {
+                  User u = null ;      
+         try{
+            String request="SELECT * FROM User where Nom='"+name+"' AND Password='"+password+"'";         
+            Statement s=dbcon.createStatement();
+            ResultSet result=s.executeQuery(request);
+          while(result.next())
+           {
+               Session.setId(result.getInt("ID"));
+              Session.setNom(result.getString("Nom"));
+               Session.setPrenom(result.getString("prenom"));
+               Session.setPassword(result.getString("Password"));
+               Session.setType(result.getString("type"));
+              u = new User(result.getString("type").toString());
+           }
+          
+         }
+        catch (SQLException ex)
+        {
+         System.out.println(ex) ;
+                             return null ;
+
+        }
+         return u ;
     }
     
-     public List<User> Getall() {
-           List<User> users = new ArrayList<>();
-           String req = "SELECT * from User";
-           
-           try {
-             pst = dbcon.prepareStatement(req);
-             ResultSet rs = pst.executeQuery();
-             
-             User u = new User();
-             rs.next();
-             u.setId(rs.getInt(1));
-             u.setNom(rs.getString(2));
-             u.setPrenom(rs.getString(3));
-             u.setAdresse(rs.getString(4));
-             u.setEmail(rs.getString(5));
-             u.setPassword(rs.getString(6));
-             u.setType(rs.getString(7));
-             u.setNum(rs.getString(8));
-             
-            users.add(u);
-             
-         } catch (Exception e) {
-         System.err.println(e.getMessage());
-        
-         }
-        return users;
-     
-     }
-     
-        @Override
-    public User GetById(int ID) {
-    String req = "SELECT * from User WHERE Id = ?";
-            try {
-                pst = dbcon.prepareStatement(req);
-                pst.setInt(1,ID);
-                ResultSet rs = pst.executeQuery();
-                
-                User u = new User();
-                rs.next();
-                
-                u.setId(rs.getInt(1));
-                u.setNom(rs.getString(2));
-                u.setPrenom(rs.getString(3));
-                u.setAdresse(rs.getString(4));
-                u.setEmail(rs.getString(5));
-                u.setPassword(rs.getString(6));
-                u.setType(rs.getString(7));
-                u.setNum(rs.getString(8));
-                
-                return u;
-            } catch (SQLException e) {
-                   System.err.println(e.getMessage());
-            return null;
-            }
 
+
+    public void rechercher(String index) {
+        List<User> result = afficher().stream().filter(line -> index.equals(line.getNom())).collect(Collectors.toList());
+                    System.out.println("----------");
+                    result.forEach(System.out::println);
+                    System.out.println("Recherche");
+         
+    }
+    
     }
 
-}
+
+

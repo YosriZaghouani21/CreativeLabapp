@@ -4,7 +4,7 @@
  */
 package Sportifydesktop.infrastructure;
 import java.sql.*;
-import sportify.Config;
+import sportify1.Config;
 /**
  *
  * @author zagho
@@ -17,7 +17,7 @@ public class DBconnector {
     private Connection cnx;
     private static DBconnector instance;
     
-    private DBconnector() {
+    public DBconnector() {
         
         try {
             cnx = DriverManager.getConnection(url, user, password);

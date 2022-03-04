@@ -1,0 +1,19 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+    
+    .hover_border:hover {
+        -fx-border-color : #0fbcf9;
+        -fx-border-width: 0px 0px 0px 4npx;
+        -fx-background-color :  #2391ED;
+        -fx-cursor: hand;
+        
+    }
+    
+    .cursor_hand {
+        -fx-cursor : hand;
+    }
+
+
