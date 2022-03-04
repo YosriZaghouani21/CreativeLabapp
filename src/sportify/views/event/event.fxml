@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../events/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.event.EventController">
+   <children>
+      <Label layoutX="61.0" layoutY="67.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Nom Evenement" />
+      <Label layoutX="61.0" layoutY="121.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Date Evenement" />
+      <Label layoutX="61.0" layoutY="174.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Localisation" />
+      <Label layoutX="61.0" layoutY="221.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Description" />
+      <Label layoutX="61.0" layoutY="277.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Categorie Evenement" />
+      <TextField fx:id="evnom" layoutX="215.0" layoutY="63.0" />
+      <TextField fx:id="evdate" layoutX="215.0" layoutY="117.0" />
+      <TextField fx:id="evlocalisation" layoutX="215.0" layoutY="170.0" />
+      <TextField fx:id="evdescription" layoutX="215.0" layoutY="217.0" />
+      <TextField fx:id="evcategev" layoutX="215.0" layoutY="273.0" />
+      <Button fx:id="evajout" layoutX="463.0" layoutY="195.0" mnemonicParsing="false" onAction="#AjouterEven" text="Ajouter">
+         <styleClass>
+            <String fx:value="cursor_hand" />
+            <String fx:value="hover_border" />
+         </styleClass></Button>
+      <Button fx:id="evbut" layoutX="35.0" layoutY="22.0" mnemonicParsing="false" onAction="#retour" text="Retour">
+         <styleClass>
+            <String fx:value="cursor_hand" />
+            <String fx:value="hover_border" />
+         </styleClass></Button>
+      <ImageView fitHeight="151.0" fitWidth="140.0" layoutX="467.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/272253970_725763518327216_7496918084342993249_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checknom" fitHeight="25.0" fitWidth="40.0" layoutX="387.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="checkdesc" fitHeight="25.0" fitWidth="40.0" layoutX="387.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="checkloca" fitHeight="25.0" fitWidth="40.0" layoutX="387.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="checkdate" fitHeight="25.0" fitWidth="40.0" layoutX="387.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="checkcateg" fitHeight="25.0" fitWidth="40.0" layoutX="387.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -27,6 +27,7 @@ public class Categorieevenement {
         this.TypeCategEv = TypeCategEv;
     }
 
+
     
     public int getIdCategEv() {
         return idCategEv;
