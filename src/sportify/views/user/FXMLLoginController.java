@@ -19,7 +19,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import sportify.models.user.Session;
 import sportify.models.user.User;
 import sportify.services.user.ImpServiceUser;
 
@@ -51,12 +53,15 @@ public class FXMLLoginController implements Initializable {
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-
-        if (tfNom.getText().toString().equals("") && tfPassword.getText().toString().equals("")) {
-            Notification.setText("Wrong credentiels ! ");
-        }
-
+        
         User u = new User();
+        if (tfNom.getText().toString().equals("") || tfPassword.getText().toString().equals("")) {
+            Notification.setText("Wrong credentiels ! ");
+            Notification.setTextFill(Color.web("#F00000"));
+        }
+        else {
+
+        
         ImpServiceUser isu = new ImpServiceUser();
         String Nom = tfNom.getText();
         String Password = tfPassword.getText();
@@ -68,7 +73,7 @@ public class FXMLLoginController implements Initializable {
             alert.setTitle("Success");
             alert.setContentText("User is logged successfully!");
             alert.show();
-            System.out.println(u.getType());
+            
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -81,6 +86,7 @@ public class FXMLLoginController implements Initializable {
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
+            Session.setUserStatic(u);
 
         } else {
             System.out.println("Connceted as Client");
@@ -89,9 +95,13 @@ public class FXMLLoginController implements Initializable {
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
+            Session.setUserStatic(u);
+            
+
 
         }
 
+    }
     }
 
     @FXML

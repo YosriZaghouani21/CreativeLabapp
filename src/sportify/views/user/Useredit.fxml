@@ -198,6 +198,7 @@
                      <styleClass>
                         <String fx:value="cursor_hand" />
                         <String fx:value="hover_border" />
+                        <String fx:value="add-btn" />
                      </styleClass>
                   </Button>
                   <Text layoutX="125.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Modifer l'utilisateur" textAlignment="CENTER">
@@ -209,6 +210,7 @@
                      <styleClass>
                         <String fx:value="cursor_hand" />
                         <String fx:value="hover_border" />
+                        <String fx:value="add-btn" />
                      </styleClass>
                   </Button>
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="429.0" pickOnBounds="true" preserveRatio="true">

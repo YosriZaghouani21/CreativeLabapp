@@ -52,6 +52,8 @@ public class UsereditController implements Initializable {
     private Button Annuler;
     @FXML
     private Button Modifier;
+    @FXML
+    private Button Editusr;
 
     /**
      * Initializes the controller class.
@@ -93,6 +95,7 @@ public class UsereditController implements Initializable {
 
     }
 
+    @FXML
     private void modifier(ActionEvent event) {
         int Id = Integer.valueOf(id.getText());
         String Nom = nom.getText();

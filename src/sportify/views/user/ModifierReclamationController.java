@@ -5,13 +5,17 @@
  */
 package sportify.views.user;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -50,9 +54,10 @@ public class ModifierReclamationController implements Initializable {
 
     @FXML
     private void modifier(ActionEvent event) {
+        
+         String description = Description.getText();
+         String date = Date.getText();
         int Idreclamation = Integer.valueOf(IdReclamation.getText());
-        String date = Date.getText();
-        String description = Description.getText();
         int id = Integer.valueOf(Id.getText());
 
         try {
@@ -66,7 +71,7 @@ public class ModifierReclamationController implements Initializable {
             ModifytAlert.setContentText("Voulez-vous vraiment modifier cette Reclamation ? ?");
             Optional<ButtonType> optionModifyBookAlert = ModifytAlert.showAndWait();
             if (optionModifyBookAlert.get() == ButtonType.OK) {
-                Reclamation r = new Reclamation (IdReclamation, Date, Description, Id);
+                Reclamation r = new Reclamation(IdReclamation, Date, Description, Id);
                 ImpServiceReclamation ad = new ImpServiceReclamation();
                 ad.modifier(r);
                 Alert succModifyAlert = new Alert(Alert.AlertType.INFORMATION);
@@ -84,14 +89,19 @@ public class ModifierReclamationController implements Initializable {
     }
 
     @FXML
-    private void cancel(ActionEvent event) {
+    private void cancel(ActionEvent event) throws IOException {
+          Stage primaryStage = (Stage) Annuler.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/FXMLMain.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     void setData(int id, int idReclamation, String description, String date) {
         Id.setText("" + id);
         IdReclamation.setText("" + idReclamation);
         Description.setText("" + description);
-        Date.setText("" + date);  
+        Date.setText("" + date);
     }
 
 }

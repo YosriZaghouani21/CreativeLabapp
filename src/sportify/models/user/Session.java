@@ -17,6 +17,7 @@ public class Session {
      private static String type ; 
      private static String password ;
      private static String numero ;
+     public static User UserStatic ;
 
      
     
@@ -78,6 +79,13 @@ public class Session {
     public static void setNumero(String numero) {
         Session.numero = numero;
     }
+    
+       public static User getUserStatic() {
+        return UserStatic;
+    }
 
+    public static void setUserStatic(User UserStatic) {
+        Session.UserStatic = UserStatic;
+    }
     
 }

@@ -9,50 +9,43 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sportify.views.user.ModifierController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.ModifierController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@fxmlmain.css">
+      <AnchorPane id="AnchorPane" layoutY="-6.0" prefHeight="411.0" prefWidth="381.0" stylesheets="@fxmlmain.css">
          <children>
-            <TextField fx:id="id" editable="false" layoutX="135.0" layoutY="36.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="prenom" layoutX="135.0" layoutY="131.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="nom" layoutX="135.0" layoutY="85.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="email" layoutX="135.0" layoutY="212.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="adresse" layoutX="135.0" layoutY="171.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="type" layoutX="135.0" layoutY="306.0" prefHeight="25.0" prefWidth="155.0" />
-            <TextField fx:id="password" layoutX="135.0" layoutY="259.0" prefHeight="25.0" prefWidth="155.0" />
-            <Text layoutX="71.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="ID" />
-            <Text layoutX="61.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Nom" />
-            <Text layoutX="59.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Prenom" />
-            <Text layoutX="59.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Adresse" />
-            <Text layoutX="60.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Email" />
-            <Text layoutX="47.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Password" />
-            <TextField fx:id="num" layoutX="135.0" layoutY="353.0" prefHeight="25.0" prefWidth="155.0" />
-            <Text layoutX="55.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Type" />
-            <Text layoutX="54.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Num" />
-            <Button fx:id="modifier" layoutX="349.0" layoutY="344.0" mnemonicParsing="false" onAction="#modifier" text="Enregistrer">
-               <styleClass>
-                  <String fx:value="cursor_hand" />
-                  <String fx:value="hover_border" />
-               </styleClass>
-            </Button>
-            <Text layoutX="125.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Modifer l'utilisateur" textAlignment="CENTER">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Text>
-            <Button fx:id="Annuler" layoutX="478.0" layoutY="344.0" mnemonicParsing="false" onAction="#cancel" text="Annuler">
-               <styleClass>
-                  <String fx:value="cursor_hand" />
-                  <String fx:value="hover_border" />
-               </styleClass>
-            </Button>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="429.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/driver-license.png" />
-               </image>
-            </ImageView>
+            <TextField fx:id="prenom" layoutX="135.0" layoutY="93.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="nom" layoutX="135.0" layoutY="47.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="email" layoutX="135.0" layoutY="174.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="adresse" layoutX="135.0" layoutY="133.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="type" layoutX="135.0" layoutY="268.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="password" layoutX="135.0" layoutY="221.0" prefHeight="25.0" prefWidth="155.0" />
+            <Text fill="WHITE" layoutX="61.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Nom" />
+            <Text fill="WHITE" layoutX="59.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Prenom" />
+            <Text fill="WHITE" layoutX="59.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Adresse" />
+            <Text fill="WHITE" layoutX="60.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Email" />
+            <Text fill="WHITE" layoutX="47.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Password" />
+            <TextField fx:id="num" layoutX="135.0" layoutY="315.0" prefHeight="25.0" prefWidth="155.0" />
+            <Text fill="WHITE" layoutX="55.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Type" />
+            <Text fill="WHITE" layoutX="54.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Num" />
+            <Button fx:id="modifier" layoutX="109.0" layoutY="365.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #4a3e8f;" styleClass="add-btn" text="Enregistrer" />
+            <Button fx:id="Annuler" layoutX="221.0" layoutY="365.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #4a3e8f;" styleClass="add-btn" text="Annuler" />
          </children>
+         <styleClass>
+            <String fx:value="bckg-color" />
+            <String fx:value="Radius-right" />
+         </styleClass>
       </AnchorPane>
+      <Text layoutX="394.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Modifier l'utilisateur" textAlignment="CENTER" wrappingWidth="178.1962890625">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="383.0" layoutY="150.0">
+         <image>
+            <Image url="@../../../img/edit%20(1).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="id" editable="false" layoutX="421.0" layoutY="95.0" prefHeight="25.0" prefWidth="155.0" styleClass="add-btn" stylesheets="@fxmlmain.css" />
+      <Text layoutX="401.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="ID" />
    </children>
 </AnchorPane>

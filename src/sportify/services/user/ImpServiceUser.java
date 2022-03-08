@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Comparator;
 import java.util.stream.Collectors;
+import sportify.models.user.Reclamation;
 import sportify.models.user.Session;
 
 /**
@@ -154,6 +155,10 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
                     result.forEach(System.out::println);
                     System.out.println("Recherche");
          
+    }
+
+    public void ajouter(Reclamation R) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     }

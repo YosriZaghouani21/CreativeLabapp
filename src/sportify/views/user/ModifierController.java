@@ -71,7 +71,7 @@ public class ModifierController implements Initializable {
         String Email = email.getText();
         String Adresse = adresse.getText();
         String Type = type.getText();
-         String Password = password.getText();
+        String Password = password.getText();
         String Num = num.getText();
 
         try {
@@ -116,12 +116,11 @@ public class ModifierController implements Initializable {
 
     @FXML
     private void cancel(ActionEvent event) throws IOException {
-             Stage primaryStage = (Stage) Annuler.getScene().getWindow();
+        Stage primaryStage = (Stage) Annuler.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/FXMLMain.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
- 
 }

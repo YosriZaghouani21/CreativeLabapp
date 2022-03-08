@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -28,6 +30,8 @@ public class FXMLMainClientController implements Initializable {
     private Button Editusr;
     @FXML
     private Button btnReclamation;
+    @FXML
+    private Button Rapport;
 
     /**
      * Initializes the controller class.
@@ -35,11 +39,11 @@ public class FXMLMainClientController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void Edit_User(ActionEvent event) throws IOException {
-             Stage primaryStage = (Stage) Editusr.getScene().getWindow();
+        Stage primaryStage = (Stage) Editusr.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/Useredit.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
@@ -49,5 +53,16 @@ public class FXMLMainClientController implements Initializable {
     @FXML
     private void srcReclamation(ActionEvent event) {
     }
-    
+
+ 
+
+    @FXML
+    private void Repporter(ActionEvent event) throws IOException {
+         Stage primaryStage = (Stage) Editusr.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/Reports.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
 }

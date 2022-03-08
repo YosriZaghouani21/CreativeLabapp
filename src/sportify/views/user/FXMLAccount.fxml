@@ -12,55 +12,68 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #9D7D6F;" stylesheets="@fxmlmain.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.FXMLAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1099.0" stylesheets="@fxmlmain.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.FXMLAccountController">
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="320.0" style="-fx-background-color: #2391ED;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="396.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="22.0" layoutY="42.0" text="Nom" />
-            <Label layoutX="20.0" layoutY="92.0" text="Prénom" />
-            <Label layoutX="20.0" layoutY="190.0" text="Email" />
-            <Label layoutX="15.0" layoutY="237.0" text="Password" />
-            <Label layoutX="11.0" layoutY="283.0" text="Telephone" />
-            <Label layoutX="20.0" layoutY="142.0" text="Adresse" />
-            <TextField fx:id="tfNom" layoutX="89.0" layoutY="37.0" />
-            <TextField fx:id="tfPrenom" layoutX="89.0" layoutY="87.0" />
-            <TextField fx:id="tfAdresse" layoutX="89.0" layoutY="137.0" />
-            <TextField fx:id="tfEmail" layoutX="89.0" layoutY="185.0" />
-            <TextField fx:id="tfTelephone" layoutX="89.0" layoutY="278.0" />
-            <Button fx:id="Ajout" layoutX="72.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajouter" text="Crée Compte">
+            <Label layoutX="42.0" layoutY="122.0" style="-fx-text-fill: WHITE;" text="Nom" />
+            <Label layoutX="40.0" layoutY="172.0" style="-fx-text-fill: WHITE;" text="Prénom" />
+            <Label layoutX="40.0" layoutY="290.0" style="-fx-text-fill: WHITE;" text="Email" />
+            <Label layoutX="35.0" layoutY="357.0" style="-fx-text-fill: WHITE;" text="Password" />
+            <Label layoutX="31.0" layoutY="403.0" style="-fx-text-fill: WHITE;" text="Telephone" />
+            <Label layoutX="40.0" layoutY="231.0" style="-fx-text-fill: WHITE;" text="Adresse" />
+            <TextField fx:id="tfNom" layoutX="109.0" layoutY="117.0" />
+            <TextField fx:id="tfPrenom" layoutX="109.0" layoutY="167.0" />
+            <TextField fx:id="tfAdresse" layoutX="109.0" layoutY="226.0" />
+            <TextField fx:id="tfEmail" layoutX="109.0" layoutY="285.0" />
+            <TextField fx:id="tfTelephone" layoutX="109.0" layoutY="398.0" />
+            <Button fx:id="Ajout" layoutX="92.0" layoutY="468.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #4a3e8f;" text="Crée Compte" textFill="WHITE">
                <styleClass>
                   <String fx:value="cursor_hand" />
                   <String fx:value="hover_border" />
+                  <String fx:value="add-btn" />
                </styleClass></Button>
-            <Button fx:id="Cancel" layoutX="212.0" layoutY="348.0" mnemonicParsing="false" onAction="#annuler" text="Annuler">
+            <Button fx:id="Cancel" layoutX="232.0" layoutY="468.0" mnemonicParsing="false" onAction="#annuler" style="-fx-background-color: #4a3e8f;" text="Annuler" textFill="WHITE">
                <styleClass>
                   <String fx:value="cursor_hand" />
                   <String fx:value="hover_border" />
+                  <String fx:value="add-btn" />
                </styleClass></Button>
-            <PasswordField fx:id="tfPassword" layoutX="89.0" layoutY="232.0" />
+            <PasswordField fx:id="tfPassword" layoutX="109.0" layoutY="352.0" />
+            <Text fill="WHITE" layoutX="109.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Créer compte">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Text>
+            <Label fx:id="Emailv" layoutX="33.0" layoutY="323.0" prefHeight="21.0" prefWidth="329.0" />
          </children>
+         <styleClass>
+            <String fx:value="bckg-color" />
+            <String fx:value="Radius-left" />
+         </styleClass>
       </AnchorPane>
    </right>
    <center>
-      <AnchorPane prefHeight="400.0" prefWidth="270.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="270.0" style="-fx-background-color: white;" stylesheets="@fxmlmain.css" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="Notification" layoutX="96.0" layoutY="328.0" />
-            <ImageView fitHeight="243.0" fitWidth="220.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/edit_usr.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="Connecter" layoutX="96.0" layoutY="323.0" mnemonicParsing="false" onAction="#connecter" text="Se connecter">
+            <Label fx:id="Notification" layoutX="237.0" layoutY="548.0" prefHeight="21.0" prefWidth="265.0" />
+            <Button fx:id="Connecter" layoutX="317.0" layoutY="507.0" mnemonicParsing="false" onAction="#connecter" style="-fx-background-color: #4a3e8f;" text="Se connecter" textFill="WHITE">
                <styleClass>
                   <String fx:value="cursor_hand" />
                   <String fx:value="hover_border" />
+                  <String fx:value="add-btn" />
                </styleClass>
             </Button>
-            <Text layoutX="26.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Vous avez déja un compte?">
+            <Text layoutX="255.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-fill: WHITE;" text="Vous avez déja un compte?">
                <font>
                   <Font size="19.0" />
                </font>
             </Text>
+            <ImageView fitHeight="383.0" fitWidth="604.0" layoutX="68.0" layoutY="63.0">
+               <image>
+                  <Image url="@../../../img/undraw_mobile_images_rc0q.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

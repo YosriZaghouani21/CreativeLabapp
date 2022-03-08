@@ -14,14 +14,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sportify.views.user.ReclamationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.ReclamationController">
    <children>
       <BorderPane prefHeight="894.0" prefWidth="1323.0" style="-fx-background-color: #ECEAEA;" styleClass="hover_border" stylesheets="@fxmlmain.css">
          <top>
             <HBox prefWidth="1317.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #2391ED;" HBox.hgrow="ALWAYS">
+                  <HBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #4a3e8f;" HBox.hgrow="ALWAYS">
                      <children>
                         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 16px; -fx-font-family: bold;" text="Sportify" textAlignment="CENTER" wrappingWidth="56.7421875" HBox.hgrow="ALWAYS" />
                      </children>
@@ -72,7 +71,7 @@
          <left>
             <VBox prefWidth="150.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="150.0" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="150.0" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="80.0" />
                      </padding>
@@ -84,7 +83,7 @@
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
@@ -96,48 +95,48 @@
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Tasks">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 1">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Invoice">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 2">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Messages">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 3">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                         </Text>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="hover_border" stylesheets="@fxmlmain.css">
+                  <HBox alignment="CENTER_LEFT" stylesheets="@fxmlmain.css">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Reports">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 4">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -185,6 +184,7 @@
                            <styleClass>
                               <String fx:value="cursor_hand" />
                               <String fx:value="hover_border" />
+                              <String fx:value="add-btn" />
                            </styleClass>
                         </Button>
                         <HBox prefHeight="100.0" prefWidth="200.0">
@@ -193,12 +193,14 @@
                                  <styleClass>
                                     <String fx:value="cursor_hand" />
                                     <String fx:value="hover_border" />
+                                    <String fx:value="add-btn" />
                                  </styleClass>
                               </Button>
                               <Button fx:id="Retour" mnemonicParsing="false" onAction="#Cancel" text="Retour">
                                  <styleClass>
                                     <String fx:value="cursor_hand" />
                                     <String fx:value="hover_border" />
+                                    <String fx:value="add-btn" />
                                  </styleClass>
                               </Button>
                            </children>
