@@ -19,6 +19,7 @@ public class Reclamation {
     private String Description;
     private String Date;
     private int Id;
+    private User Reclamateur;
 
     public Reclamation(int IdReclamation, String Description, String Date, int Id) {
         this.IdReclamation = IdReclamation;
@@ -42,6 +43,10 @@ public class Reclamation {
     }
 
     public Reclamation(TextField IdReclamation, TextField Date, TextField Description, TextField Id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Reclamation(String Date, String Description) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -77,13 +82,17 @@ public class Reclamation {
         this.Id = Id;
     }
 
+    public User getReclamateur() {
+        return Reclamateur;
+    }
+
+    public void setReclamateur(User Reclamateur) {
+        this.Reclamateur = Reclamateur;
+    }
+
     @Override
     public String toString() {
         return "Reclamation{" + "IdReclamation=" + IdReclamation + ", Description=" + Description + ", Date=" + Date + ", Id=" + Id + '}';
     }
-
- 
-
- 
 
 }

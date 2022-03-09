@@ -122,18 +122,18 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
 
     @Override
     public User returnuser(String name, String password) {
-        User u = null;
+        User u = new User ();
         try {
             String request = "SELECT * FROM User where Nom='" + name + "' AND Password='" + password + "'";
             Statement s = dbcon.createStatement();
             ResultSet result = s.executeQuery(request);
             while (result.next()) {
-                Session.setId(result.getInt("ID"));
-                Session.setNom(result.getString("Nom"));
-                Session.setPrenom(result.getString("prenom"));
-                Session.setPassword(result.getString("Password"));
-                Session.setType(result.getString("type"));
-                u = new User(result.getString("type").toString());
+                u.setId(result.getInt("ID"));
+                u.setNom(result.getString("Nom"));
+                u.setPrenom(result.getString("prenom"));
+                u.setPassword(result.getString("Password"));
+                u.setType(result.getString("type"));
+               
             }
 
         } catch (SQLException ex) {
@@ -184,30 +184,6 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
         }
     }
     
-  /*  public List<User> GetByName(String Nom) {
-        List<User> users = new ArrayList<>();
-        String req = "SELECT * from `User` WHERE `Nom` = ?";
-        try {
-            pst = dbcon.prepareStatement(req);
-            pst.setString(1, Nom);
-            ResultSet rs = pst.executeQuery();
-            while (rs.next()) {
-                User us = new User();
-                us.setId(rs.getInt(1));
-                us.setNom(rs.getString(2));
-                us.setPrenom(rs.getString(3));
-                us.setAdresse(rs.getString(4));
-                us.setEmail(rs.getString(5));
-                us.setPassword(rs.getString(6));
-                us.setType(rs.getString(7));
-                us.setNum(rs.getString(8));
-                users.add(us);
-            }
 
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-        return users;
-    }*/
 
 }

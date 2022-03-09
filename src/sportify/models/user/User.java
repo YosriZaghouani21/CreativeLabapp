@@ -17,6 +17,7 @@ public class User {
     private String Password;
     private String Type;
      private String Num;
+     
 
     public User(String Type) {
         this.Type = Type;
@@ -138,6 +139,8 @@ public class User {
     public String toString() {
         return "User{" + "Id=" + Id + ", Nom=" + Nom + ", Prenom=" + Prenom + ", Num=" + Num + ", Adresse=" + Adresse + ", Email=" + Email + ", Password=" + Password + ", Type=" + Type + '}';
     }
+    
+ 
 
     
     

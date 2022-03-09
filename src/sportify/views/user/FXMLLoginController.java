@@ -58,6 +58,7 @@ public class FXMLLoginController implements Initializable {
     private void ajouter(ActionEvent event) throws IOException {
 
         User u = new User();
+
         if (tfNom.getText().toString().equals("") || tfPassword.getText().toString().equals("")) {
             Notification.setText("Wrong credentiels ! ");
             Notification.setTextFill(Color.web("#F00000"));
@@ -70,6 +71,9 @@ public class FXMLLoginController implements Initializable {
 
             try {
                 u = isu.returnuser(Nom, Password);
+                System.out.println(u.toString());
+                Session.setUserStatic(u);
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
                 alert.setContentText("User is logged successfully!");
@@ -78,7 +82,6 @@ public class FXMLLoginController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-            System.out.println(u);
             if (("Admin".equals(u.getType()))) {
                 System.out.println("Connected as Admin");
                 Stage primaryStage = (Stage) ajouter.getScene().getWindow();
@@ -86,6 +89,8 @@ public class FXMLLoginController implements Initializable {
                 Scene scene = new Scene(root);
                 primaryStage.setScene(scene);
                 primaryStage.show();
+
+                ImpServiceUser su = new ImpServiceUser();
                 Session.setUserStatic(u);
 
             } else {
@@ -95,7 +100,8 @@ public class FXMLLoginController implements Initializable {
                 Scene scene = new Scene(root);
                 primaryStage.setScene(scene);
                 primaryStage.show();
-                Session.setUserStatic(u);
+                ImpServiceUser su = new ImpServiceUser();
+                System.out.println(Session.UserStatic);
 
             }
 
@@ -113,7 +119,7 @@ public class FXMLLoginController implements Initializable {
 
     @FXML
     private void TakemeToForgetpasswd(ActionEvent event) throws IOException, Exception {
-        EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn","Votre code est : "+ Session.getVerificationCode() );
+        EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn", "Votre code est : " + Session.getVerificationCode());
         ImpServiceUser su = new ImpServiceUser();
         User u1 = su.GetByName(tfNom.getText());
         Session.setUserStatic(u1);

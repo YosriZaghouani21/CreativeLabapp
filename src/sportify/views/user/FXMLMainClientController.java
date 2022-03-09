@@ -18,6 +18,9 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sportify.models.user.Session;
+import sportify.models.user.User;
+import sportify.services.user.ImpServiceUser;
 
 /**
  * FXML Controller class
@@ -32,6 +35,7 @@ public class FXMLMainClientController implements Initializable {
     private Button btnReclamation;
     @FXML
     private Button Rapport;
+    User u = new User();
 
     /**
      * Initializes the controller class.
@@ -58,11 +62,14 @@ public class FXMLMainClientController implements Initializable {
 
     @FXML
     private void Repporter(ActionEvent event) throws IOException {
-         Stage primaryStage = (Stage) Editusr.getScene().getWindow();
+         Stage primaryStage = (Stage) Rapport.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/Reports.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
+        ImpServiceUser su = new ImpServiceUser();
+        Session.getUserStatic();
+       
     }
 
 }

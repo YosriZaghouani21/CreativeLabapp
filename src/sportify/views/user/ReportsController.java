@@ -22,7 +22,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sportify.models.user.EnvoyerMail;
 import sportify.models.user.Reclamation;
+import sportify.models.user.Session;
 import sportify.models.user.User;
+import sportify.services.user.ImpServiceReclamation;
 import sportify.services.user.ImpServiceUser;
 
 /**
@@ -42,6 +44,9 @@ public class ReportsController implements Initializable {
     private Button Reclamer;
     @FXML
     private Button Cancel;
+    
+    Reclamation rec = new Reclamation();
+    private ImpServiceReclamation impr = new ImpServiceReclamation();
 
     /**
      * Initializes the controller class.
@@ -49,29 +54,59 @@ public class ReportsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        Session.getUserStatic();
     }
+ 
 
     @FXML
-    private void ajouter(ActionEvent event) {
+    private void ajouter(ActionEvent event) throws IOException {
+            if ((tDate.getText().length() != 0) && (tfDescription.getText().length() != 0)) {
+                rec.setReclamateur(Session.UserStatic);
+                rec.setDate(tDate.getText());
+                rec.setDescription(tfDescription.getText());
+                rec.setId(Session.UserStatic.getId());
+                System.out.println(Session.UserStatic.getId());
+                
+               
+                impr.ajouter(rec);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Ajout de réclamation");
+                alert.setContentText("Réclamation ajoutée avec succées!");
+                alert.show();
+                
+         Stage primaryStage = (Stage) Cancel.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/FXMLMainClient.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+                
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ajout de réclamation");
+                alert.setContentText("Champs invalides.");
+                alert.show();
+            }
+    }
+        /*int Id_usr = Session.UserStatic.getId();
 
-        ImpServiceUser isu = new ImpServiceUser();
+        ImpServiceReclamation isr = new ImpServiceReclamation();
 
         String Date = tDate.getText();
         String Description = tfDescription.getText();
+        int Description = tfDescription.();
 
-        Reclamation R = new Reclamation(Date, Description, 69);
-
+        Reclamation R = new Reclamation(Date, Description ,IdReclamation, Id_usr );
+         if ((tDate.getText().length() != 0) && (tfDescription.getText().length() != 0)) {
+             rec.setReclamateur(Session.UserStatic);
         try {
-            isu.ajouter(R);
+            isr.ajouter(R);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("Reclamation is added successfully!");
             alert.show();
             tDate.setText("");
             tfDescription.setText("");
-
-            Notification.setText("Veuillez insérer une adresse mail valide");
-            Notification.setTextFill(Color.web("#F00000"));
+            
 
             Stage primaryStage = (Stage) Reclamer.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/sportify/views/user/FXMLMainClient.fxml"));
@@ -79,11 +114,19 @@ public class ReportsController implements Initializable {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            //EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn", "Vous avez un nouveau client: \n" + "Son Nom est:" + tfNom.getText() + "\n Son Prenom est:" + tfPrenom.getText() + "\n son email est:" + tfEmail.getText());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+        
     }
+        else {
+ Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ajout de réclamation");
+                alert.setContentText("Champs invalides.");
+                alert.show();
+}*/
+    //}
+
 
     @FXML
     private void annuler(ActionEvent event) throws IOException {
@@ -93,5 +136,9 @@ public class ReportsController implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    
+
+    
+    
 
 }
