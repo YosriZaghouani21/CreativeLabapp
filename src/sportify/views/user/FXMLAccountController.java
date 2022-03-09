@@ -135,8 +135,8 @@ Pattern pattern = Pattern.compile(regex);
                 Scene scene = new Scene(root);
                 primaryStage.setScene(scene);
                 primaryStage.show();
-                //EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn","Vous avez un nouveau client:" );
-                EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn", "Vous avez un nouveau client: \n" + "Son Nom est:" + tfNom.getText() + "\n Son Prenom est:" + tfPrenom.getText() + "\n son email est:" + tfEmail.getText());
+                
+                EnvoyerMail.sendMail("yosri.zaghouani@esprit.tn", "Vous avez un nouveau client: \n" + "Son Nom est:" + Nom + "\n Son Prenom est:" + tfPrenom.getText() + "\n son email est:" + tfEmail.getText());
 
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());

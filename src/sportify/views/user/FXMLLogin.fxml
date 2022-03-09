@@ -50,5 +50,6 @@
             <Font size="57.0" />
          </font>
       </Text>
+      <Button fx:id="ForgetPasswd" layoutX="791.0" layoutY="462.0" mnemonicParsing="false" onAction="#TakemeToForgetpasswd" styleClass="add-btn" text="Forget password ?" />
    </children>
 </AnchorPane>

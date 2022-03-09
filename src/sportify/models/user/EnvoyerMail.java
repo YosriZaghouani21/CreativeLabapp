@@ -53,7 +53,7 @@ public class EnvoyerMail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccountEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-            message.setSubject("My first Email from Java");
+            message.setSubject("2XXX");
             message.setText(body);
             return message;
         } catch (Exception ex) {

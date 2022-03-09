@@ -10,18 +10,18 @@ package sportify.models.user;
  * @author zagho
  */
 public class Session {
-     private static int id ;
-     private static String nom ;
-     private static String prenom ;
-     private static String email ;
-     private static String type ; 
-     private static String password ;
-     private static String numero ;
-     public static User UserStatic ;
 
-     
-    
-     public Session() {
+    private static int id;
+    private static String nom;
+    private static String prenom;
+    private static String email;
+    private static String type;
+    private static String password;
+    private static String numero;
+    public static User UserStatic;
+    private static String VerificationCode ="2XXX";
+
+    public Session() {
     }
 
     public static int getId() {
@@ -79,13 +79,21 @@ public class Session {
     public static void setNumero(String numero) {
         Session.numero = numero;
     }
-    
-       public static User getUserStatic() {
+
+    public static User getUserStatic() {
         return UserStatic;
     }
 
     public static void setUserStatic(User UserStatic) {
         Session.UserStatic = UserStatic;
     }
-    
+
+    public static String getVerificationCode() {
+        return VerificationCode;
+    }
+
+    public static void setVerificationCode(String VerificationCode) {
+        Session.VerificationCode = VerificationCode;
+    }
+
 }

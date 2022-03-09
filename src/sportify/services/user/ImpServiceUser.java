@@ -6,6 +6,7 @@ package sportify.services.user;
 
 import Sportifydesktop.infrastructure.DBconnector;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -67,9 +68,8 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
 
     }
 
- @Override
+    @Override
     public void modifier(User U) {
-        
 
         try {
 
@@ -99,20 +99,20 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
         try {
             pst = dbcon.prepareStatement(req);
             ResultSet rs = pst.executeQuery();
-     while(rs.next()){
-            User u = new User();
-            rs.next();
-            u.setId(rs.getInt(1));
-            u.setNom(rs.getString(2));
-            u.setPrenom(rs.getString(3));
-            u.setAdresse(rs.getString(4));
-            u.setEmail(rs.getString(5));
-            u.setPassword(rs.getString(6));
-            u.setType(rs.getString(7));
-            u.setNum(rs.getString(8));
+            while (rs.next()) {
+                User u = new User();
+                rs.next();
+                u.setId(rs.getInt(1));
+                u.setNom(rs.getString(2));
+                u.setPrenom(rs.getString(3));
+                u.setAdresse(rs.getString(4));
+                u.setEmail(rs.getString(5));
+                u.setPassword(rs.getString(6));
+                u.setType(rs.getString(7));
+                u.setNum(rs.getString(8));
 
-            users.add(u);
-             }
+                users.add(u);
+            }
         } catch (Exception e) {
             System.err.println(e.getMessage());
 
@@ -122,46 +122,92 @@ public class ImpServiceUser implements InterfaceServiceUser<User> {
 
     @Override
     public User returnuser(String name, String password) {
-                  User u = null ;      
-         try{
-            String request="SELECT * FROM User where Nom='"+name+"' AND Password='"+password+"'";         
-            Statement s=dbcon.createStatement();
-            ResultSet result=s.executeQuery(request);
-          while(result.next())
-           {
-               Session.setId(result.getInt("ID"));
-              Session.setNom(result.getString("Nom"));
-               Session.setPrenom(result.getString("prenom"));
-               Session.setPassword(result.getString("Password"));
-               Session.setType(result.getString("type"));
-              u = new User(result.getString("type").toString());
-           }
-          
-         }
-        catch (SQLException ex)
-        {
-         System.out.println(ex) ;
-                             return null ;
+        User u = null;
+        try {
+            String request = "SELECT * FROM User where Nom='" + name + "' AND Password='" + password + "'";
+            Statement s = dbcon.createStatement();
+            ResultSet result = s.executeQuery(request);
+            while (result.next()) {
+                Session.setId(result.getInt("ID"));
+                Session.setNom(result.getString("Nom"));
+                Session.setPrenom(result.getString("prenom"));
+                Session.setPassword(result.getString("Password"));
+                Session.setType(result.getString("type"));
+                u = new User(result.getString("type").toString());
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            return null;
 
         }
-         return u ;
+        return u;
     }
-    
-
 
     public void rechercher(String index) {
         List<User> result = afficher().stream().filter(line -> index.equals(line.getNom())).collect(Collectors.toList());
-                    System.out.println("----------");
-                    result.forEach(System.out::println);
-                    System.out.println("Recherche");
-         
+        System.out.println("----------");
+        result.forEach(System.out::println);
+        System.out.println("Recherche");
+
     }
 
     public void ajouter(Reclamation R) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    public User GetByName(String Nom) {
+        String req = "SELECT * from `User` WHERE `Nom` = ?";
+        try {
+            pst = dbcon.prepareStatement(req);
+            pst.setString(1, Nom);
+            ResultSet rs = pst.executeQuery();
+
+            User u = new User();
+            rs.next();
+            if (rs.getRow() != 0) {
+                u.setId(rs.getInt(1));
+                u.setNom(Nom);
+                u.setPrenom(rs.getString(3));
+                u.setAdresse(rs.getString(4));
+                u.setEmail(rs.getString(5));
+                u.setPassword(rs.getString(6));
+                u.setType(rs.getString(7));
+                u.setNum(rs.getString(8));
+
+            }
+            return u;
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return null;
+        }
     }
+    
+  /*  public List<User> GetByName(String Nom) {
+        List<User> users = new ArrayList<>();
+        String req = "SELECT * from `User` WHERE `Nom` = ?";
+        try {
+            pst = dbcon.prepareStatement(req);
+            pst.setString(1, Nom);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                User us = new User();
+                us.setId(rs.getInt(1));
+                us.setNom(rs.getString(2));
+                us.setPrenom(rs.getString(3));
+                us.setAdresse(rs.getString(4));
+                us.setEmail(rs.getString(5));
+                us.setPassword(rs.getString(6));
+                us.setType(rs.getString(7));
+                us.setNum(rs.getString(8));
+                users.add(us);
+            }
 
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return users;
+    }*/
 
-
+}
