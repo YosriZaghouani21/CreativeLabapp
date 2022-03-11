@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="719.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReservationPartieClientController">
+   <children>
+      <ImageView fitHeight="746.0" fitWidth="1138.0" layoutX="-2.0" layoutY="-5.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/undraw_Winter_olympics_p07j.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="prixtotale" alignment="CENTER" layoutX="437.0" layoutY="437.0" prefHeight="57.0" prefWidth="201.0" promptText="PrixTotale" />
+      <TextField fx:id="nbrheure" alignment="CENTER" layoutX="435.0" layoutY="368.0" prefHeight="57.0" prefWidth="201.0" promptText="NombreHeure" />
+      <TextField fx:id="Id_user" alignment="CENTER" layoutX="433.0" layoutY="167.0" prefHeight="57.0" prefWidth="201.0" promptText="Id_User" />
+      <Button fx:id="AddReservation" layoutX="447.0" layoutY="512.0" mnemonicParsing="false" onAction="#AddReservation" prefHeight="31.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Add">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="557.0" layoutY="512.0" mnemonicParsing="false" onAction="#enregistrerPdf" prefHeight="31.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@../values/style.css" text="Pdf">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Label alignment="CENTER" layoutX="118.0" layoutY="-18.0" prefHeight="153.0" prefWidth="832.0" style="-fx-font-family: Quicksand;" text=" Reservation">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="160.0" fitWidth="162.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/272253970_725763518327216_7496918084342993249_n.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="closeid" layoutX="1045.0" layoutY="4.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="70.0" style="-fx-background-color: #877ad7;" styleClass="add-btn" stylesheets="@../values/style.css" text="Close" />
+      <TextField fx:id="Id_coach" alignment="CENTER" layoutX="435.0" layoutY="231.0" prefHeight="57.0" prefWidth="201.0" promptText="Id_Coach" />
+      <DatePicker fx:id="date" layoutX="437.0" layoutY="300.0" prefHeight="57.0" prefWidth="201.0" promptText="     Date_Reservation" />
+   </children>
+</AnchorPane>
