@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.controllers.PasserlivraisonController">
+   <children>
+      <Pane prefHeight="586.0" prefWidth="907.0" style="-fx-background-color: white;">
+         <children>
+            <Text fill="#9384f2" layoutX="291.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmer Livraison" textAlignment="CENTER">
+               <font>
+                  <Font name="Tahoma Bold" size="35.0" />
+               </font>
+            </Text>
+            <TextField fx:id="adresse" alignment="CENTER" layoutX="89.0" layoutY="269.0" prefHeight="31.0" prefWidth="186.0" promptText="Adresse de livraison" stylesheets="@../../../img/style.css" />
+            <TextField fx:id="adresse_comple" alignment="CENTER" layoutX="89.0" layoutY="308.0" prefHeight="31.0" prefWidth="186.0" promptText="Adresse complémentaire" stylesheets="@../../../img/style.css" />
+            <TextField fx:id="code_postale" alignment="CENTER" layoutX="89.0" layoutY="350.0" promptText="Code postale" stylesheets="@../../../img/style.css" />
+            <TextField fx:id="ville" alignment="CENTER" layoutX="89.0" layoutY="390.0" promptText="Ville" stylesheets="@../../../img/style.css" />
+            <Button fx:id="payer" alignment="CENTER" layoutX="103.0" layoutY="440.0" mnemonicParsing="false" onAction="#passerLivraison" style="-fx-background-color: #b4ace6;" styleClass="add-btn" text="procéder au paiment">
+               <stylesheets>
+                  <URL value="@img/style.css" />
+                  <URL value="@../../../img/style.css" />
+               </stylesheets></Button>
+            <Button fx:id="retour" alignment="CENTER" layoutX="139.0" layoutY="493.0" mnemonicParsing="false" onAction="#retourview" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" text="Retour">
+               <stylesheets>
+                  <URL value="@img/style.css" />
+                  <URL value="@../../../img/style.css" />
+               </stylesheets></Button>
+            <ImageView fitHeight="174.0" fitWidth="186.0" layoutX="2.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/272253970_725763518327216_7496918084342993249_n.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="542.0" fitWidth="527.0" layoutX="318.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/undraw_Order_delivered_re_v4ab(1).png" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="methode_payement" layoutX="89.0" layoutY="232.0" onAction="#Select1" prefHeight="31.0" prefWidth="186.0" promptText="Méthode paiement" stylesheets="@../../../img/style.css" />
+            <DatePicker fx:id="date_liv" layoutX="89.0" layoutY="192.0" prefHeight="31.0" prefWidth="186.0" promptText="Date Livraison" stylesheets="@../../../img/style.css" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
