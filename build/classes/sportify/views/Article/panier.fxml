@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="922.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../../values/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.controllers.PanierController">
+   <children>
+      <HBox layoutX="1.0" layoutY="166.0" prefHeight="593.0" prefWidth="718.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../../values/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="659.0" prefWidth="783.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../../values/style.css">
+               <children>
+                  <ScrollPane fx:id="scroll" prefHeight="590.0" prefWidth="690.0" style="-fx-background-color: #FFFFFF;" styleClass="transparent" stylesheets="@../../../values/style.css">
+                     <content>
+                        <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                           </rowConstraints>
+                        </GridPane>
+                     </content>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+                  <Pane prefHeight="63.0" prefWidth="742.0" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="593.0" prefWidth="249.0" stylesheets="@../../../values/style.css">
+               <children>
+                  <Pane prefHeight="356.0" prefWidth="194.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../../values/style.css">
+                     <children>
+                        <HBox layoutX="16.0" layoutY="189.0" prefHeight="52.0" prefWidth="174.0" />
+                        <Label layoutX="11.0" layoutY="136.0" prefHeight="54.0" prefWidth="187.0" stylesheets="@../../../values/style.css" text="totale achats prix">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="14.0" layoutY="181.0" prefHeight="56.0" prefWidth="142.0" stylesheets="@../../../values/style.css">
+                           <children>
+                              <Label fx:id="totalprix" alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="183.0" text="\$">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="132.0" fitWidth="148.0" layoutX="34.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../imgArticle/panier.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="142.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="delet" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deletArticle" prefHeight="55.0" prefWidth="139.0" style="-fx-background-color: blue;" styleClass="add-btn" stylesheets="@../../../values/style.css" text="Supprimer" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font></Button>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="56.0" prefWidth="142.0">
+                     <children>
+                        <Button fx:id="commade" mnemonicParsing="false" onAction="#commandebutton" prefHeight="56.0" prefWidth="140.0" style="-fx-background-color: blue;" styleClass="add-btn" stylesheets="@../../../values/style.css" text="Commander" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="73.0" prefWidth="154.0" stylesheets="@../../../values/style.css" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

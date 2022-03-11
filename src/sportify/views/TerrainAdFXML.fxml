@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="717.0" stylesheets="@../../values/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.controllers.TerrainAdFXMLController">
+   <children>
+      <VBox layoutX="24.0" layoutY="123.0" prefHeight="157.0" prefWidth="83.0" spacing="25.0" />
+      <VBox layoutX="117.0" layoutY="123.0" prefHeight="157.0" prefWidth="130.0" spacing="15.0" />
+      <Button fx:id="add" layoutX="387.0" layoutY="410.0" mnemonicParsing="false" onAction="#AddTerrain" prefHeight="29.0" prefWidth="71.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutX="19.0" layoutY="77.0" onMouseClicked="#tablehandleButtonAction" prefHeight="322.0" prefWidth="687.0">
+         <columns>
+            <TableColumn fx:id="colnom" prefWidth="69.0" text="Nom Terrain" />
+            <TableColumn fx:id="coldispo" prefWidth="104.0" text="Disponibilite" />
+            <TableColumn fx:id="colprix" prefWidth="76.0" text="Prix" />
+            <TableColumn fx:id="coladresse" prefWidth="76.0" text="Adresse" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="update" layoutX="387.0" layoutY="444.0" mnemonicParsing="false" onAction="#UpdateTerrain" prefHeight="29.0" prefWidth="71.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="delete" layoutX="387.0" layoutY="477.0" mnemonicParsing="false" onAction="#DeleteTerrain" prefHeight="29.0" prefWidth="71.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      
+      <TextField fx:id="nomTerrain" layoutX="143.0" layoutY="410.0" styleClass="field" />
+      <Label layoutX="19.0" layoutY="481.0" styleClass="labelform" text="Disponibilite" textFill="#0a0835">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="disponibilite" layoutX="143.0" layoutY="477.0" styleClass="field" />
+      <Label layoutX="19.0" layoutY="514.0" styleClass="labelform" text="Prix" textFill="#0a0835">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prixHeure" layoutX="143.0" layoutY="510.0" styleClass="field" />
+      <Label layoutX="251.0" layoutY="24.0" text="La liste des terrains" textFill="#6f5bf5">
+         <font>
+            <Font name="System Italic" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="Retour" layoutX="19.0" layoutY="15.0" mnemonicParsing="false" onAction="#RetourP" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label layoutX="19.0" layoutY="414.0" text="Nom Terrain" textFill="#0a0835">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="Actualiser" layoutX="622.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActualiserP" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Actualiser" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <CheckBox fx:id="check" layoutX="531.0" layoutY="435.0" mnemonicParsing="false" onAction="#robot" text="Je ne suis pas un robot">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <Label fx:id="Adresse" layoutX="19.0" layoutY="448.0" styleClass="labelform" text="Adresse" textFill="#0a0835">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="adresse" layoutX="143.0" layoutY="444.0" />
+      <Button fx:id="Excel" layoutX="387.0" layoutY="510.0" mnemonicParsing="false" onAction="#Excel" prefHeight="29.0" prefWidth="71.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Excel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="Notification" layoutX="603.0" layoutY="514.0" />
+      <Button fx:id="listerv" layoutX="541.0" layoutY="477.0" mnemonicParsing="false" onAction="#listrv" prefHeight="39.0" prefWidth="149.0" style="-fx-background-color: #b4ace6;" styleClass="add-btn" stylesheets="@../../values/style.css" text="Liste des réservations" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+   </children>
+</Pane>

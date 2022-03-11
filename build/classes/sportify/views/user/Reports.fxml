@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.ReportsController">
+   <children>
+      <BorderPane layoutX="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1045.0" stylesheets="@fxmlmain.css">
+         <right>
+            <AnchorPane prefHeight="600.0" prefWidth="527.0" style="-fx-background-color: #4a3e8f;" styleClass="Radius-left" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="202.0" layoutY="172.0" text="Date" textFill="WHITE" />
+                  <Label layoutX="194.0" layoutY="252.0" text="Description" textFill="WHITE" />
+                  <TextField fx:id="tDate" layoutX="282.0" layoutY="167.0" />
+                  <TextField fx:id="tfDescription" layoutX="282.0" layoutY="247.0" />
+                  <Button fx:id="Reclamer" layoutX="270.0" layoutY="346.0" mnemonicParsing="false" onAction="#ajouter" text="Reclamer">
+                     <styleClass>
+                        <String fx:value="cursor_hand" />
+                        <String fx:value="hover_border" />
+                        <String fx:value="add-btn" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="Cancel" layoutX="376.0" layoutY="346.0" mnemonicParsing="false" onAction="#annuler" text="Annuler">
+                     <styleClass>
+                        <String fx:value="cursor_hand" />
+                        <String fx:value="hover_border" />
+                        <String fx:value="add-btn" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="139.0" fitWidth="144.0" layoutX="69.0" layoutY="419.0">
+                     <image>
+                        <Image url="@../../../img/megaphone.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </right>
+         <center>
+            <AnchorPane prefHeight="609.0" prefWidth="263.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="Notification" layoutX="96.0" layoutY="328.0" />
+                  <Text layoutX="136.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Vous avez eu un probléme ?">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#ffde00" layoutX="175.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tenez nous au courant" />
+                  <ImageView fitHeight="383.0" fitWidth="450.0" layoutX="30.0" layoutY="41.0">
+                     <image>
+                        <Image url="@../../../img/undraw_warning_cyit.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

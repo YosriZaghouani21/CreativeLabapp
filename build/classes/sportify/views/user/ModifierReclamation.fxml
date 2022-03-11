@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.user.ModifierReclamationController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="363.0" stylesheets="@fxmlmain.css">
+         <children>
+            <TextField fx:id="IdReclamation" editable="false" layoutX="155.0" layoutY="86.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="Date" layoutX="155.0" layoutY="181.0" prefHeight="25.0" prefWidth="155.0" />
+            <TextField fx:id="Description" layoutX="155.0" layoutY="135.0" prefHeight="25.0" prefWidth="155.0" />
+            <Text fill="WHITE" layoutX="7.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 20px;" text="Id Reclamation" />
+            <Text fill="WHITE" layoutX="11.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 20px;" text="Description" />
+            <Text fill="WHITE" layoutX="17.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 20px;" text="Date" />
+            <Text fill="WHITE" layoutX="20.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 20px;" text="Id" />
+            <Button fx:id="modifier" layoutX="230.0" layoutY="295.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #4a3e8f;" text="Enregistrer">
+               <styleClass>
+                  <String fx:value="cursor_hand" />
+                  <String fx:value="hover_border" />
+                  <String fx:value="add-btn" />
+               </styleClass>
+            </Button>
+            <Button fx:id="Annuler" layoutX="137.0" layoutY="295.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #4a3e8f;" text="Annuler">
+               <styleClass>
+                  <String fx:value="cursor_hand" />
+                  <String fx:value="hover_border" />
+                  <String fx:value="add-btn" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="Id" editable="false" layoutX="155.0" layoutY="221.0" prefHeight="25.0" prefWidth="155.0" />
+         </children>
+         <styleClass>
+            <String fx:value="bckg-color" />
+            <String fx:value="Radius-right" />
+         </styleClass>
+      </AnchorPane>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="379.0" layoutY="139.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/help.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="379.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand;" text="Modifer Reclamation" textAlignment="CENTER" wrappingWidth="199.99999041855335">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

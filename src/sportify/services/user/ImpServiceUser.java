@@ -53,6 +53,7 @@ public class ImpServiceUser implements InterfaceServiceUser {
     public void Delete(User entity) {
         String req = "DELETE FROM `User` WHERE `IdUser` = ? ";
         try {
+<<<<<<< Updated upstream
             pst = dbcon.prepareStatement(req);
             pst.setInt(1, entity.getId());
             pst.executeUpdate();
@@ -60,6 +61,22 @@ public class ImpServiceUser implements InterfaceServiceUser {
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
+=======
+            
+            String req = "UPDATE User SET Nom = '"
+                    + U.getNom() + "', Prenom='" + U.getPrenom() + "', Adresse='"
+                    + U.getAdresse() + "', Email='" + U.getEmail()
+                    + "', Password='" + U.getPassword()
+                    + "', Type='" + U.getType()
+                    + "', Numero='" + U.getNum()
+                    + "'WHERE Id=" + U.getId();
+
+            Statement st = new DBconnector().getCnx().createStatement();
+            st.executeUpdate(req);
+            System.out.println("Utilisateur modifée !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+>>>>>>> Stashed changes
         }
     }
 

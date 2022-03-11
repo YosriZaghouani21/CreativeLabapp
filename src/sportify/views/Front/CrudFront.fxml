@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1133.0" stylesheets="@../fxmlmain.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.views.Front.CrudFrontController">
+   <children>
+      <BorderPane layoutX="-14.0" layoutY="-4.0" prefHeight="732.0" prefWidth="1184.0" style="-fx-background-color: #ECEAEA;" styleClass="hover_border" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+         <top>
+            <HBox style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox maxWidth="-Infinity" prefHeight="62.0" prefWidth="159.0" style="-fx-background-color: #4a3e8f;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-size: 16px; -fx-font-family: bold;" text="Sportify" textAlignment="CENTER" wrappingWidth="56.7421875" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" style="-fx-background-color: #FFFFFF;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="92.0" promptText="search" style="-fx-background-color: transparent; -fx-font-family: Quicksand; -fx-font-family: bold;">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefWidth="150.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets left="850.0" />
+                     </HBox.margin>
+                     <children>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/Ring.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="37.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/profile.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button fx:id="Editusr" mnemonicParsing="false" onAction="#Edit_User" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: WHITE;" text="Button" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <VBox prefWidth="150.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="80.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Dashboard">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Reclamation">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Button fx:id="btnReclamation" mnemonicParsing="false" onAction="#srcReclamation" style="-fx-background-color: WHITE;" styleClass="hover_border" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 1">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 2">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 3">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Option 4">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Settings">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="hover_border" />
+                              <String fx:value="add-btn" />
+                           </styleClass>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px; -fx-font-family: Quicksand;" text="Reports">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="hover_border" />
+                              <String fx:value="add-btn" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+      <AnchorPane id="AnchorPane" layoutX="144.0" layoutY="54.0" prefHeight="674.0" prefWidth="917.0" style="-fx-background-color: white;" stylesheets="@../../../../../../../../Downloads/fxmlmain.css">
+         <children>
+            <Button layoutX="52.0" layoutY="102.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="655.0" style="-fx-background-color: #786ad2;" styleClass="add-btn" text="Coach" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Button layoutX="62.0" layoutY="492.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="655.0" style="-fx-background-color: #786ad2;" styleClass="add-btn" text="Livraison" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Button layoutX="62.0" layoutY="402.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="655.0" style="-fx-background-color: #786ad2;" styleClass="add-btn" text="Catégorie Article" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="Evenement" layoutX="54.0" layoutY="292.0" mnemonicParsing="false" onAction="#Evenement" prefHeight="67.0" prefWidth="655.0" style="-fx-background-color: #786ad2;" styleClass="add-btn" text="Evennement" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Button layoutX="52.0" layoutY="192.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="655.0" style="-fx-background-color: #786ad2;" styleClass="add-btn" text="Terrains" textFill="WHITE">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="197.0" fitWidth="269.0" layoutX="760.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../../../img/275170437_652909945982914_1439506619952426786_n.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="196.0" fitWidth="230.0" layoutX="754.0" layoutY="216.0">
+               <image>
+                  <Image url="@../../../img/275451944_918158668821263_4646361328550552919_n.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="224.0" fitWidth="276.0" layoutX="735.0" layoutY="432.0">
+               <image>
+                  <Image url="@../../../img/275179451_3241871952711583_7260806262991897748_n.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="retour" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #b4ace6;" styleClass="add-btn" text="Retour" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
