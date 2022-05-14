@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane fx:id="zf" onMousePressed="#click" prefHeight="248.0" prefWidth="214.0" stylesheets="@../../../values/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sportify.controllers.ItemController">
+   <children>
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="99.0" text="Nike">
+         <font>
+            <Font name="Cambria" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceLable" layoutX="135.0" layoutY="14.0" prefHeight="32.0" prefWidth="79.0" text="\$100">
+         <font>
+            <Font name="Cambria Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img" fitHeight="145.0" fitWidth="145.0" layoutX="36.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../imgArticle/nike2.png" />
+         </image>
+      </ImageView>
+      <Rating fx:id="rating" layoutX="19.0" layoutY="202.0" onDragDetected="#dragerating" onMouseClicked="#ratingvalue" prefHeight="32.0" prefWidth="126.0" />
+   </children>
+   <styleClass>
+      <String fx:value="fruit-item" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

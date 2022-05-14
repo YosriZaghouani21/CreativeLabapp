@@ -1,0 +1,44 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+    
+    .hover_border:hover {
+        -fx-border-color : #0fbcf9;
+        -fx-border-width: 0px 0px 0px 4npx;
+        -fx-background-color :  #4a3e8f;
+        -fx-cursor: hand;
+        
+    }
+    
+    .cursor_hand {
+        -fx-cursor : hand;
+    }
+    
+ .linear-grad2{
+-fx-background-color: linear-gradient(to right, #ff7f50, #6a5acd);
+ }
+ 
+ .bckg-color {
+     
+     -fx-background-color:  #6a5acd;
+ }
+ 
+ .linear-left{
+    -fx-background-color: linear-gradient(to left, #ff7f50, #6a5acd);
+}
+
+.add-btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.Radius-left {
+    -fx-background-radius: 20 0 0 20;
+}
+
+.Radius-right {
+    -fx-background-radius: 0 40 40 0;
+}
+

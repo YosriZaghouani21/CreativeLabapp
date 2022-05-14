@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sportify.models.user;
+
 import java.sql.Date;
 import java.util.Objects;
+import javafx.scene.control.TextField;
 //import java.utils.*;
 
 /**
@@ -12,28 +14,25 @@ import java.util.Objects;
  * @author zagho
  */
 public class Reclamation {
+
     private int IdReclamation;
-    private String Sujet;
     private String Description;
-    private String Traitement;
-    private Date Date;
+    private String Date;
+    private int Id;
     private User Reclamateur;
 
-    public Reclamation(int IdReclamation, String Sujet, String Description, String Traitement, Date Date, User Reclamateur) {
+    public Reclamation(int IdReclamation, String Description, String Date, int Id) {
         this.IdReclamation = IdReclamation;
-        this.Sujet = Sujet;
         this.Description = Description;
-        this.Traitement = Traitement;
         this.Date = Date;
-        this.Reclamateur = Reclamateur;
+        this.Id = Id;
     }
 
-    public Reclamation(String Sujet, String Description, String Traitement, Date Date, User Reclamateur) {
-        this.Sujet = Sujet;
+    public Reclamation(String Description, String Date, int Id) {
+
         this.Description = Description;
-        this.Traitement = Traitement;
         this.Date = Date;
-        this.Reclamateur = Reclamateur;
+        this.Id = Id;
     }
 
     public Reclamation(int IdReclamation) {
@@ -41,6 +40,14 @@ public class Reclamation {
     }
 
     public Reclamation() {
+    }
+
+    public Reclamation(TextField IdReclamation, TextField Date, TextField Description, TextField Id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Reclamation(String Date, String Description) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getIdReclamation() {
@@ -51,14 +58,6 @@ public class Reclamation {
         this.IdReclamation = IdReclamation;
     }
 
-    public String getSujet() {
-        return Sujet;
-    }
-
-    public void setSujet(String Sujet) {
-        this.Sujet = Sujet;
-    }
-
     public String getDescription() {
         return Description;
     }
@@ -67,20 +66,20 @@ public class Reclamation {
         this.Description = Description;
     }
 
-    public String getTraitement() {
-        return Traitement;
-    }
-
-    public void setTraitement(String Traitement) {
-        this.Traitement = Traitement;
-    }
-
-    public Date getDate() {
+    public String getDate() {
         return Date;
     }
 
-    public void setDate(Date Date) {
+    public void setDate(String Date) {
         this.Date = Date;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     public User getReclamateur() {
@@ -93,44 +92,7 @@ public class Reclamation {
 
     @Override
     public String toString() {
-        return "Reclamation{" + "IdReclamation=" + IdReclamation + ", Sujet=" + Sujet + ", Description=" + Description + ", Traitement=" + Traitement + ", Date=" + Date + ", Reclamateur=" + Reclamateur + '}';
+        return "Reclamation{" + "IdReclamation=" + IdReclamation + ", Description=" + Description + ", Date=" + Date + ", Id=" + Id + '}';
     }
 
-  
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Reclamation other = (Reclamation) obj;
-        if (this.IdReclamation != other.IdReclamation) {
-            return false;
-        }
-        if (!Objects.equals(this.Sujet, other.Sujet)) {
-            return false;
-        }
-        if (!Objects.equals(this.Description, other.Description)) {
-            return false;
-        }
-        if (!Objects.equals(this.Traitement, other.Traitement)) {
-            return false;
-        }
-        if (!Objects.equals(this.Date, other.Date)) {
-            return false;
-        }
-        if (!Objects.equals(this.Reclamateur, other.Reclamateur)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
-    
 }

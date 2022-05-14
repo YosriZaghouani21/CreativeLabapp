@@ -12,13 +12,18 @@ public class User {
        public  int Id;
     private  String Nom ;
     private String Prenom;
-    private String Num;
     private String Adresse;
     private String Email;
     private String Password;
     private String Type;
+     private String Num;
+     
 
-    public User(int Id, String Nom, String Prenom, String Num, String Adresse, String Email, String Password, String Type) {
+    public User(String Type) {
+        this.Type = Type;
+    }
+
+    public User(int Id, String Nom, String Prenom, String Adresse, String Email, String Password, String Type, String Num) {
         this.Id = Id;
         this.Nom = Nom;
         this.Prenom = Prenom;
@@ -29,7 +34,18 @@ public class User {
         this.Type = Type;
     }
 
-    public User(String Nom, String Prenom, String Num, String Adresse, String Email, String Password, String Type) {
+    public User(String Nom, String Prenom, String Adresse, String Email, String Password, String Num) {
+        this.Nom = Nom;
+        this.Prenom = Prenom;
+        this.Adresse = Adresse;
+        this.Email = Email;
+        this.Password = Password;
+        this.Num = Num;
+    }
+    
+    
+
+    public User(String Nom, String Prenom, String Adresse, String Email, String Password, String Type, String Num) {
         this.Nom = Nom;
         this.Prenom = Prenom;
         this.Num = Num;
@@ -39,12 +55,21 @@ public class User {
         this.Type = Type;
     }
 
+    public User(String Email, String Password) {
+        this.Email = Email;
+        this.Password = Password;
+    }
+    
+    
+   
     public User(int Id) {
         this.Id = Id;
     }
 
     public User() {
     }
+
+  
 
     public int getId() {
         return Id;
@@ -109,6 +134,13 @@ public class User {
     public void setType(String Type) {
         this.Type = Type;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "Id=" + Id + ", Nom=" + Nom + ", Prenom=" + Prenom + ", Num=" + Num + ", Adresse=" + Adresse + ", Email=" + Email + ", Password=" + Password + ", Type=" + Type + '}';
+    }
+    
+ 
 
     
     

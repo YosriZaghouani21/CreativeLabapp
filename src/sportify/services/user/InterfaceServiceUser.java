@@ -5,30 +5,19 @@
 package sportify.services.user;
 import sportify.models.user.User;
 import Sportifydesktop.infrastructure.IService;
+import java.util.List;
 
 /**
  *
  * @author zagho
  */
-public interface InterfaceServiceUser extends IService<User> {
-        @Override
-    public User GetById(int ID);
-
-   // @Override
-   // public List<Admin> Getall();
-
-    @Override
-    public void Update(User entity);
-
-    @Override
-    public void Delete(User entity);
-
-    @Override
-    public User Add(User entity);
-    
-
-
-
+public interface InterfaceServiceUser <T>{
+       
+ void ajouter(T entity);
+    void supprimer(int entity);
+    void modifier(T entity);
+     List<T> afficher();
+    User returnuser (String name , String password);
 
 
     
